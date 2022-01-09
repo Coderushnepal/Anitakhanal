@@ -1,0 +1,29 @@
+<!-- Create a function that takes a word and returns the new word without including the first character.
+
+Examples
+
+newWord("apple") ➞ "pple"
+
+newWord("cherry") ➞ "herry"
+
+newWord("plum") ➞ "lum" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation - question2</title>
+</head>
+<body>
+    <script>
+        function withoutfirstchar(word) {
+            return (word.substring(1));
+
+        }
+        console.log(withoutfirstchar("apple"));
+        console.log(withoutfirstchar("cherry"));
+        console.log(withoutfirstchar("plum"));
+    </script>
+</body>
+</html>
