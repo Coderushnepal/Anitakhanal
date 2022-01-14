@@ -26,6 +26,7 @@ span {
 .right {
     float:right;
 }
+
 .header {
     background: #FFFFFF;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
@@ -257,7 +258,7 @@ span {
     color:#FF5300;
 }
 .footer-wrapper {
-    width: 375px;
+    /* width: 375px; */
     background-color: #373737;
     margin-top: 62px;
 }
@@ -294,6 +295,23 @@ span {
     padding:6px;
     margin:0;
     position: absolute;
+    left: 70%;
+}
+@media only screen and (min-width: 425px) {
+    .blogpost-rightwrapper {
+         margin-top: -390%;
+         margin-left: 10px;
+    }
+    .footer-wrapper {
+        width: 425px;
+}
+.newsletter-search .uparrow {
+    background-color:#FF5300;
+    padding:6px;
+    margin:0;
+    position: absolute;
+    left: 71%;
+}
 }
 
 @media only screen and (min-width: 768px) {
@@ -435,6 +453,33 @@ body {
     padding: 5px;
   
 }
+.newsletter-search .newsletter {
+    width:98%;
+}
+.newsletter-search .uparrow {
+background-color:#FF5300;
+padding:6px;
+margin:0;
+position: absolute;
+left: 90%;
+}
+}
+
+@media only screen and (min-width: 1024px) {
+    .blogpost-rightwrapper {
+        margin-top: -237%;
+    }
+    .footer-wrapper {
+        width: 1024px;
+    }
+    .newsletter-search .uparrow {
+        background-color:#FF5300;
+        padding:6px;
+        margin:0;
+        position: absolute;
+        left: 89%;
+        }
+
 }
 @media only screen and (min-width: 1200px) {
     .header .navbar ul {
@@ -476,4 +521,22 @@ body {
     .footer-wrapper {
         width: 1326px;
     }
+}
+@media only screen and (min-width: 1440px) {
+    .blogpost-rightwrapper {
+        margin-top: -180%;
+    }
+    .footer-wrapper {
+        width: 1440px;
+    }
+    .newsletter-search .newsletter {
+        width: 96%;
+    }
+    .newsletter-search .uparrow {
+        background-color:#FF5300;
+        padding:6px;
+        margin:0;
+        position: absolute;
+        left: 87%;
+        }
 }
