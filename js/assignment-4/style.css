@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #233d4d;
+  }
+/*   
+  .container {
+    max-width: 70rem;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+  } */
+  
+   h1 {
+    font-family: sans-serif;
+    font-size: 3.4rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: #31cf1d;
+  }
+  
+   p {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .game-container {
+    padding:20px 30px;
+    margin:auto;
+    position:relative;
+    height:350px;
+    width:450px;
+    
+  }
+  
+  .figure {
+    display: block;
+    height: 24rem;
+    width: 20rem;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    flex-shrink: 0;
+  }
+  
+  .figure-part {
+    display: none;
+  }
+  
+  .content {
+    position:absolute;
+    top:20px;
+    right:20px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+  }
+  .content p{
+      margin : 0 0 5px;
+    
+  }
+  .content span {
+      font-size:24px;
+  }
+
+  .word {
+      display:flex;
+      position: absolute;
+      bottom : 10px;
+      left:50%;
+      transform: translateX(-50%);
+
+  }
+  .letter {
+      border-bottom:3px solid pink;
+      display: inline-flex;
+      font-size:30px;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      margin:0 3px;
+      height:50px;
+      width:20px;
+  }
+  .popup-container {
+      /* color:green; */
+      position:fixed;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      display:none;
+      /* display:flex; */
+      align-items: center;
+      justify-content: center;
+
+  }
+  .popup {
+      background:#2980b9;
+      border-radius:5px;
+      padding:20px;
+      text-align: center;
+  }
+  .popup button {
+      cursor:pointer;
+      border:0;
+      margin:20px;
+      padding:12px 20px;
+      font-size:16px;
+      color:#2980b9;
+  }
+  .indication {
+      background-color: rgba(105, 105, 202, 0.411);
+      border-radius: 10px 10px 0 0;
+      padding:15px 20px;
+      position:absolute;
+      bottom:-50px;
+      transition: transform 0.3s ease-in-out;
+  }
+  .indication p {
+      margin:0;
+  }
+  .indication .show{
+      transform: translateY(-50px);
+  }
+  
+ 
