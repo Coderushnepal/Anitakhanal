@@ -123,18 +123,16 @@
       color:#2980b9;
   }
   .indication {
-      background-color: rgba(105, 105, 202, 0.411);
+      /* background-color: rgba(105, 105, 202, 0.411); */
       border-radius: 10px 10px 0 0;
       padding:15px 20px;
       position:absolute;
-      bottom:-50px;
+      bottom:50px;
+      color:white;
+      margin-left:35%;
+      text-align: center;
       transition: transform 0.3s ease-in-out;
   }
-  .indication p {
-      margin:0;
-  }
-  .indication .show{
-      transform: translateY(-50px);
-  }
+ 
   
  

@@ -1,14 +1,14 @@
-const word = document.getElementById("word");
-const wrongLetters = document.getElementById("wrong-letters");
-const finalMsg = document.getElementById("finalMsg");
-const playAgainBtn = document.getElementById("play-button");
-const indication = document.getElementById("indication");
-const popup = document.getElementById("popupcontainer");
-const figureparts = document.querySelectorAll(".figure-part");
-const wordList = [
+var word = document.getElementById("word");
+var wrongLettersContainer = document.getElementById("wrong-letters");
+var finalMsg = document.getElementById("finalMsg");
+var playAgainBtn = document.getElementById("play-button");
+var indication = document.getElementById("indication");
+var popup = document.getElementById("popupcontainer");
+var figureparts = document.querySelectorAll(".figure-part");
+var wordList = [
     'travel',
     'dance',
-    'sucess',
+    'success',
     'hope',
     'dreamy',
     'blackiee',
@@ -16,8 +16,8 @@ const wordList = [
 ];
 
 let selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
-const correctLetters = ["a"];
-const wrongLetters = [];
+var correctLetters = [];
+var wrongLetters = [];
 
 // display word function
 
@@ -32,17 +32,16 @@ ${selectedWord
 ) 
 .join("")}
 `;
-
-const innerWord = word.innerText.replace(/\n/g,"");
-if(innerWord === selectedWord){
-    finalMsg.innerText = "congratulation you won";
-    popup.style.display = "flex";
-}
+    const innerWord = word.innerText.replace(/\n/g,"");
+    if(innerWord === selectedWord){
+        finalMsg.innerText = "congratulation you won";
+        popup.style.display = "flex";
+    }
 }
 
 // wrong letter function
 function updateWrongLetter(){
-    wrongLetters.innerHTML = `
+    wrongLettersContainer.innerHTML = `
     ${
         wrongLetters.length > 0 ? "<p> wrong </p>" : ""
     }
@@ -55,7 +54,7 @@ function updateWrongLetter(){
 
 // display body figureparts
 figureparts.forEach((part, index) => {
-    const errors = wrongLetters.length;
+    var errors = wrongLetters.length;
     if(index < errors) {
         part.style.dislpay = "block";
     }else {
@@ -65,15 +64,16 @@ figureparts.forEach((part, index) => {
 
 // check if lost
 if(wrongLetters.length === figureparts.length){
-    finalMsg.innerText = "unfortunately you lost :(";
-    popup.style.display = "flex";
+    finalMsg.innerHTML = "unfortunately you lost :(";
+    popup.style.display = "block";
 }
 
 // show notification
 function showIndication() {
-    indication.classList.add("show");
+    indication.innerHTML = "you have already entered this letter";
+    indication.style.display = "block";
     setTimeout(() => {
-        indication.classList.remove("show");
+        indication.style.display = "none";
         
     }, 2000);
 
@@ -83,7 +83,7 @@ function showIndication() {
 
 window.addEventListener("keydown", (e) => {
     if(e.keyCode >= 65 && e.keyCode <= 90){
-        const letter = e.key;
+        var letter = e.key;
         console.log(letter);
     }
     if(selectedWord.includes(letter)){
@@ -102,6 +102,15 @@ window.addEventListener("keydown", (e) => {
         }
     }
 });
+
+playAgainBtn.addEventListener("click", function(){
+    correctLetters.splice(0);
+    wrongLetters.splice(0);
+    selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
+    displayWord();
+    updateWrongLetter();
+    popup.style.display = "none";
+})
 
 displayWord();
 
