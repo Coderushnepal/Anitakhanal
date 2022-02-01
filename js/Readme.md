@@ -9,4 +9,4 @@
 * HangMan | [code](https://github.com/Coderushnepal/Anitakhanal/tree/master/js/assignment-4) | [demo](https://coderushnepal.github.io/Anitakhanal/js/assignment-4/).
 * Ball Bounce | [code](https://github.com/Coderushnepal/Anitakhanal/tree/master/js/assignment-5) | [demo](https://coderushnepal.github.io/Anitakhanal/js/assignment-5/).
 * BallBounce using OOP | [code](https://github.com/Coderushnepal/Anitakhanal/tree/master/js/assignment-6) | [demo](https://coderushnepal.github.io/Anitakhanal/js/assignment-6/).
-* Expence Tracker | [demo](https://github.com/Coderushnepal/Anitakhanal/tree/master/js/assignment-7) | [code](https://coderushnepal.github.io/Anitakhanal/js/assignment-7/).
+* Expence Tracker | [code](https://github.com/Coderushnepal/Anitakhanal/tree/master/js/assignment-7) | [demo](https://coderushnepal.github.io/Anitakhanal/js/assignment-7/).
