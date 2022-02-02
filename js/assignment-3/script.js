@@ -155,12 +155,12 @@ console.log("hello");
 
     ) {
       password.style.borderColor = "green";
-      errorPassword.style.visibility = "hidden"
+      errorPassword.style.visibility = "hidden";
     }
 
     if(
-        confirmpasswordValidator(password, confirmpassword, errorConfirmpassword) &&
-        requiredValidator(password, confirmpassword)
+        requiredValidator(confirmpassword , errorConfirmpassword) &&
+        confirmpasswordValidator(password, confirmpassword, errorConfirmpassword) 
     )
     {
         confirmpassword.style.borderColor = "green";
@@ -201,7 +201,7 @@ function emailValidator(input, errorHolder){
     return true;
 }
 function confirmpasswordValidator(password, confirmpassword, errorHolder) {
-    if(confirmpassword !== password.value){
+    if(confirmpassword.value !== password.value){
         errorHolder.style.visibility = "visible";
         errorHolder.innerHTML = "password donot match";
         confirmpassword.style.borderColor = "red";
