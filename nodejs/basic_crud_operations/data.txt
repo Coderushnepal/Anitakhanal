@@ -1,0 +1,4 @@
+{"level":"info","message":"Checking file existence"}
+{"level":"info","message":"File existence verified. Now writing to file"}
+{"manufacturer":"Hyundai","model":"i10"}{"level":"info","message":"Successfully written to file"}
+{"level":"info","message":"Fetecing all cars"}
