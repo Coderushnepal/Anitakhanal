@@ -1,4 +1,3 @@
-import http from 'http';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
@@ -7,6 +6,8 @@ import bodyParser from 'body-parser';
 
 import router from './routes.js';
 import logger from './utils/logger.js';
+import errorHandler from './middlewares/errorHandler.js';
+
 
 const server = express();
 
@@ -18,6 +19,7 @@ server.use(bodyParser.json());
 
 server.use(router);
 
+server.use(errorHandler);
 
 
 // const PORT = 5454;

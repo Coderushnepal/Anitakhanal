@@ -1,33 +1,20 @@
-import diskDb from 'diskdb';
+import DBModel from './DBmodel.js';
+import getAllBookQuery from '../db/queries/getAllBook.js';
+import getBookDetailQuery from '../db/queries/getBookDetail.js';
 
-class Book {
+class Book extends DBModel {
     constructor() {
-        this.filename = 'books';
-        this.db = diskDb.connect('src/db', [this.filename])
+        super('books');
+    }
+    getAllBook() {
+        return this.query(getAllBookQuery);
     }
 
-    getAll() {
-        return this.db[this.filename].find();
-    }
-
-    getByID(id) {
-        return this.db[this.filename].findOne({ _id:id });
-    }
-    
-    getByParams(params){
-        return this.db[this.filename].findOne(params);
-    }
-
-    save(data) {
-        return this.db[this.filename].save(data);  
-    }
-
-    updateById(id, data) {
-        return this.db[this.filename].update({ _id:id }, data);
-    }
-
-    removeById(id) {
-        return this.db[this.filename].remove({ _id:id });
+    async getBookDetails(bookId) {
+        const [details] = await this.query(getBookDetailQuery, { bookId });
+        return details || null;
     }
 }
+
+
 export default Book;

@@ -13,3 +13,15 @@ export function validateBody(schema){
     }
 
 }
+
+export function validateQueryParams(schema) {
+    return function (req, res, next) {
+      try {
+        joi.assert(req.query, schema);
+  
+        next();
+      } catch (err) {
+        next(err);
+      }
+    };
+  }
