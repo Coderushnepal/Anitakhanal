@@ -5,6 +5,7 @@ import HoverMe from "./HoverMe";
 import List from "./List";
 
 import SpeedIndicator from "./SpeedIndicator";
+import { Calculator } from "./Calculator";
 
 class App extends React.Component{
     constructor(){
@@ -37,6 +38,7 @@ class App extends React.Component{
             <List list ={this.state.list} onAdd = {this.handleListAdd} />
             <ClickMe />
             <HoverMe />
+            <Calculator />
            
             </>
         );
