@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useMemo } from "react";
+import "../assests/css/style.css";
 
 export const Calculator = () => {
   const [dollar, setDollar] = useState(10);
-  const [pound, setPound] = useState(10);
+  const [theme, setTheme] = useState("dark");
+  // const [pound, setPound] = useState(10);
 
-//   useEffect(() =>{
-//       setPound(0.76 * dollar);
+  // useEffect(() =>{
+  //     setPound(0.76 * dollar);
 
-//   },[dollar]);
+  // },[dollar]);
 
 //   useEffect(() =>{
 //       setDollar(pound / 0.76);
@@ -19,7 +21,7 @@ const double = useMemo(() => {
 
   
   return (
-    <div>
+    <div className = {theme} >
       <h1> Calculator </h1>
       Enter $ :
       <input
@@ -31,17 +33,23 @@ const double = useMemo(() => {
           Enter Pound :
       <input 
          type = "number"
-         value = {pound}
-         onChange = {(e) => setPound(e.target.value)}
+         value = {dollar * 1.23}
+         onChange = {(e) => setDollar(e.target.value / 1.23)}
          />
 
       </div>
       <div> Rupess = {dollar * 122}</div>
-      <div> dollar = {pound * 132}</div>
+      <div> dollar = {dollar * 132}</div>
       <div> double = {double}</div>
-    </div>
-  );
+      <button 
+      onClick = {() => setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"))
+    } > Change Theme
+      </button>
+      </div>
+    
+  )
 };
+
 function doubleTheDollar(dollar) {
     for (let i = 0; i < 99999; i++) {
       for (let j = 0; j < 9999; j++) {}

@@ -1,11 +1,14 @@
 import React from "react";
+import List from "./List";
 import Welcome from './Welcome';
 import ClickMe from "./ClickMe";
 import HoverMe from "./HoverMe";
-import List from "./List";
+import Heading from "./Heading"
 
-import SpeedIndicator from "./SpeedIndicator";
 import { Calculator } from "./Calculator";
+import SpeedIndicator from "./SpeedIndicator";
+
+export const listContext = React.createContext('list');
 
 class App extends React.Component{
     constructor(){
@@ -34,8 +37,10 @@ class App extends React.Component{
             <>
             <Welcome name = "Anita Khanal" />
             <SpeedIndicator />
-            <h1>Number of fruits = {this.state.list.length} </h1>
-            <List list ={this.state.list} onAdd = {this.handleListAdd} />
+            <listContext.Provider value = {[this.state.list, this.componentDidUpdatehandleListAdd]}>
+            <Heading />
+            <List />
+            </listContext.Provider>
             <ClickMe />
             <HoverMe />
             <Calculator />
