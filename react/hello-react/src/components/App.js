@@ -37,7 +37,7 @@ class App extends React.Component{
             <>
             <Welcome name = "Anita Khanal" />
             <SpeedIndicator />
-            <listContext.Provider value = {[this.state.list, this.componentDidUpdatehandleListAdd]}>
+            <listContext.Provider value={[this.state.list, this.handleListAdd]}>
             <Heading />
             <List />
             </listContext.Provider>
